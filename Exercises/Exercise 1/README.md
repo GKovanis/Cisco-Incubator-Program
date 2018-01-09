@@ -2,7 +2,7 @@
 
 Your program should ask two **inputs** from the user:
 
-*“Enter Ip address:”*
+*“Enter Ip address:”*  
 *“Enter subnet mask in decimal format:”*
 
 Program **should**:
