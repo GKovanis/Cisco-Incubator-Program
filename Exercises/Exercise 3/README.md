@@ -1,6 +1,6 @@
 # Exercise 3 
 
-Your program should read information from the file ShowIpRoute.txt (the file contains only output of “show ip route” and for each route presented in the file you need to print the output like:
+Your program should read information from the file ShowIpRoute.txt (the file contains only output of “show ip route” and for each route presented in the file you need to print the output like):
 
 *Protocol:*  
 *Prefix:*  
