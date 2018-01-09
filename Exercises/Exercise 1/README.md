@@ -1,4 +1,4 @@
-# Exercise1
+# Exercise 1
 
 Your program should ask two **inputs** from the user:
 
