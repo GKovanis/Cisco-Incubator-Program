@@ -20,7 +20,7 @@ Please enter the subnet mask: /24
 
 ### Example of the output:
 
-     10         1         1          1
+   10         1         1          1
 00001010	00000001	00000001	00000001
 
 network address is: 10.1.1.0/24 
