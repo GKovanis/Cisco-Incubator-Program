@@ -8,8 +8,11 @@ Your program should ask two **inputs** from the user:
 Program **should**:
 
 Check the validity of ip address. If address is invalid, it should generate the error “Invalid IP address format” and prompt again “Enter ip address:”
+
 Check the validity of the subnet mask. If subnet mask is not in decimal format or incorrect, then generate the error “Subnet mask is invalid” and prompt again “Enter subnet mask in decimal format”
+
 The program should present the ip address in the binary formal like in example below (each number in decimal ip address has it’s own row of width 10 symbols).
+
 Your program should print the network address and broadcast address for the given ip.
 
 ### Example of the input:
