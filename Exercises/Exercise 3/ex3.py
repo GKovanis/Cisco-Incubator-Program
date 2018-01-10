@@ -24,7 +24,7 @@ for line in range(len(file)):
 		break
 
 # Result Pattern to extract the required data to print, 
-### THIS REGEX DOESN'T FIND THE CONNECTED DEVICES ###
+### THIS REGEX DOESN'T FIND THE CONNECTED CODE LINES ###
 Result_Pattern = """
 ^					#Beginning of String
 (.+?(?=\ \d))\ *	#Match one or More Codes
@@ -64,17 +64,20 @@ for line in range(line+1,len(file)):
 		print("Next-Hop: 			",LineSearch.group(6))
 		print("Last Update:			",LineSearch.group(7))
 		print("Outbound interface		",LineSearch.group(8))
+		print()
 	else:
 		
 		#Check if we have a Code Connected Line
 		if file[line].startswith('C'):
 			ConnectedLine = re.search(Connected_Pattern,file[line],re.VERBOSE)
-			print("Protocol: 			",Codes[ConnectedLine.group(1)])
-			print("Prefix: 			",ConnectedLine.group(2))
-			print("AD/Metric: 			")
-			print("Next-Hop: 			",ConnectedLine.group(3))
-			print("Last Update:			",ConnectedLine.group(4))
-			print("Outbound interface		",ConnectedLine.group(5))
+			if ConnectedLine:
+				print("Protocol: 			",Codes[ConnectedLine.group(1)])
+				print("Prefix: 			",ConnectedLine.group(2))
+				print("AD/Metric: 			")
+				print("Next-Hop: 			",ConnectedLine.group(3))
+				print("Last Update:			",ConnectedLine.group(4))
+				print("Outbound interface		",ConnectedLine.group(5))
+				print()
 
 
-		print()
+		
