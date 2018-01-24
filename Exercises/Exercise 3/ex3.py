@@ -24,7 +24,7 @@ for line in range(len(file)):
 		break
 
 # Result Pattern to extract the required data to print, 
-### THIS REGEX DOESN'T FIND THE CONNECTED CODE LINES ###
+### THIS REGEX DOESN'T FIND THE CONNECTED DEVICES ###
 Result_Pattern = """
 ^					#Beginning of String
 (.+?(?=\ \d))\ *	#Match one or More Codes
@@ -56,8 +56,16 @@ for line in range(line+1,len(file)):
 
 	#Find a non-direct connection matching string
 	if LineSearch:
+
+		#Check if there is a candidate default symbol ('*'), if there is, proper action is needed since it doesn't have a whitespace between codes
+		LineCode = LineSearch.group(1)
+		if ('*' in LineCode):
+			LineCode = LineCode.replace('*',' * ').rstrip()
+
 		#Protocols may have more than one Codes
-		Protocols = LineSearch.group(1).split(' ')
+		Protocols = LineCode.split(' ')
+
+		#Print Desired Output
 		print("Protocol: 			", ','.join(Codes[item] for item in Protocols))
 		print("Prefix: 			",LineSearch.group(2))
 		print("AD/Metric: 			",LineSearch.group(4))
@@ -70,6 +78,8 @@ for line in range(line+1,len(file)):
 		#Check if we have a Code Connected Line
 		if file[line].startswith('C'):
 			ConnectedLine = re.search(Connected_Pattern,file[line],re.VERBOSE)
+
+			#Print Desired Output
 			if ConnectedLine:
 				print("Protocol: 			",Codes[ConnectedLine.group(1)])
 				print("Prefix: 			",ConnectedLine.group(2))
@@ -80,4 +90,4 @@ for line in range(line+1,len(file)):
 				print()
 
 
-		
+	
