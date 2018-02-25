@@ -28,7 +28,7 @@ if (Interface_mode == "access"):
 		#Desired Ouput
 		print ("Interface ",Interface_Type_Number)
 		for i in range(len(access_template)):
-				print(access_template[i].format(*VLAN_Number))
+				print(access_template[i].format(VLAN_Number))
 	except:
 		print ("No valid VLAN number was entered. Terminating ...")
 
